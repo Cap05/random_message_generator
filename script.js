@@ -12,14 +12,23 @@ const message = {
     'you will buy'],
 
     news: ['a new car', 'a new house', 'a broken down car', 'a leaking house',
-    'a computer with no available storage']
+    'a computer with no available storage', 'a chair with no legs']
 
 };
 
 const generateMessage = () => {
-    for (let i = 0; i < message.weekday.length; i++) {
-        console.log(message.weekday[i]);
-    }
+    let randomWeekday = message.weekday[Math.floor(Math.random() * 
+        message.weekday.length)];
+    
+    let randomPerspective = message.perspective[Math.floor(Math.random() * 
+        message.perspective.length)]; 
+    
+    let randomNews = message.news[Math.floor(Math.random() * 
+        message.news.length)];
+
+
+    console.log(`Here is your fortune: on ${randomWeekday}, ${randomPerspective} ${randomNews}. 
+    Take it as you will, I'm not a real fortune teller!`);
 }
 
 generateMessage();
